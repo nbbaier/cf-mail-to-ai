@@ -1,14 +1,13 @@
 {
-	"name": "mail-to-ai",
-	"main": "src/worker.ts",
-	"compatibility_date": "2025-07-15",
-	"compatibility_flags": [],
-	"vars": { "API_HOST": "mail-to-ai.com" },
-	"kv_namespaces": [
-		{
-			"binding": "CACHE",
-			"id": "762077ecf0f74920b7718ed4b6ec7770",
-			"preview_id": "762077ecf0f74920b7718ed4b6ec7770"
-		}
-	]
+  "name": "mail-to-ai",
+  "main": "src/worker.ts",
+  "compatibility_date": "2025-07-15",
+  "compatibility_flags": [],
+  "kv_namespaces": [
+    {
+      "binding": "CACHE",
+      "id": "762077ecf0f74920b7718ed4b6ec7770",
+      "preview_id": "762077ecf0f74920b7718ed4b6ec7770"
+    }
+  ]
 }
