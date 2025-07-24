@@ -7,7 +7,7 @@ import { CloudflareStateStore } from "alchemy/state";
 const app = await alchemy("mail-to-ai", {
 	stateStore: (scope) =>
 		new CloudflareStateStore(scope, {
-			stateToken: alchemy.secret(process.env.STATE_TOKEN),
+			stateToken: alchemy.secret(process.env.ALCHEMY_STATE_TOKEN),
 		}),
 	password: process.env.SECRET_PASSPHRASE,
 });
