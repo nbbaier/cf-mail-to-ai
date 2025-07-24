@@ -5,7 +5,10 @@ import { KVNamespace, Worker, WranglerJson } from "alchemy/cloudflare";
 import { CloudflareStateStore } from "alchemy/state";
 
 const app = await alchemy("mail-to-ai", {
-	stateStore: (scope) => new CloudflareStateStore(scope),
+	stateStore: (scope) =>
+		new CloudflareStateStore(scope, {
+			stateToken: alchemy.secret(process.env.STATE_TOKEN),
+		}),
 	password: process.env.SECRET_PASSPHRASE,
 });
 
