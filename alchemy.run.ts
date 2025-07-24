@@ -5,10 +5,7 @@ import { KVNamespace, Worker, WranglerJson } from "alchemy/cloudflare";
 import { CloudflareStateStore } from "alchemy/state";
 
 const app = await alchemy("mail-to-ai", {
-	stateStore: (scope) =>
-		new CloudflareStateStore(scope, {
-			stateToken: alchemy.secret(process.env.ALCHEMY_STATE_TOKEN),
-		}),
+	stateStore: (scope) => new CloudflareStateStore(scope, {}),
 	password: process.env.SECRET_PASSPHRASE,
 });
 
@@ -17,7 +14,7 @@ export const worker = await Worker("worker", {
 	entrypoint: "src/worker.ts",
 	bindings: {
 		CACHE: await KVNamespace("cache", { title: "cache-store", adopt: true }),
-		API_HOST: alchemy.secret(process.env.API_HOST),
+		API_HOST: "mail-to-ai.com",
 	},
 	adopt: true,
 });
