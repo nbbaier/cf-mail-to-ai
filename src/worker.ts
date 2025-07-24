@@ -1,7 +1,12 @@
 import type { worker } from "../alchemy.run.ts";
 
 export default {
-  async fetch(request: Request, env: typeof worker.Env, ctx: ExecutionContext): Promise<Response> {
-    return new Response("Hello World from my-alchemy-app!");
-  },
+	async fetch(_req: Request, env: typeof worker.Env) {
+		await env.CACHE.put("key", "foo");
+		const value = await env.CACHE.get("key");
+		return Response.json({
+			cache: value,
+			apiHost: env.API_HOST || "not set",
+		});
+	},
 };
