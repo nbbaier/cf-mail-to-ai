@@ -1,13 +1,13 @@
 {
-  "name": "mail-to-ai",
+  "name": "worker-w-cache",
   "main": "src/worker.ts",
   "compatibility_date": "2025-07-15",
   "compatibility_flags": [],
   "kv_namespaces": [
     {
       "binding": "CACHE",
-      "id": "762077ecf0f74920b7718ed4b6ec7770",
-      "preview_id": "762077ecf0f74920b7718ed4b6ec7770"
+      "id": "a7e6638d4ce84f7f8b167e44a7923335",
+      "preview_id": "a7e6638d4ce84f7f8b167e44a7923335"
     }
   ]
 }

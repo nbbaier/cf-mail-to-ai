@@ -6,7 +6,6 @@ export default {
 		const value = await env.CACHE.get("key");
 		return Response.json({
 			cache: value,
-			apiHost: env.API_HOST || "not set",
 		});
 	},
 };
